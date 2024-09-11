@@ -10,7 +10,7 @@ PHP code is usually processed on a web server by a PHP interpreter implemented a
 
 The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on a variety of operating systems and platforms.
 
-The PHP language has evolved without a written formal specification or standard, with the original implementation acting as the de facto standard that other implementations aimed to follow. 
+The PHP language has evolved without a written formal specification or standard, with the original implementation acting as the de facto standard that other implementations aimed to follow.
 
 # About this Docker Build
 
