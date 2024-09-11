@@ -3,7 +3,7 @@
 This is a Dockerfile and a Github Action used to build a custom docker image of [PHP 8](https://www.php.net/) for my purely Docker powered web stack. It's configured with most everything you'd need to run things like a self-hosted [Wordpress](https://wordpress.org/) or [Nextcloud](https://nextcloud.com/).
 
 * The source is here: [https://github.com/bocan/odin-php](https://github.com/bocan/odin-php).
-* The built images (for AMD64 and ARM64) are here: [https://hub.docker.com/r/bocan/odin-php](https://hub.docker.com/r/bocan/odin-php).
+* The built images (for AMD64 and ARM64) are here: [https://hub.docker.com/r/bocan/php](https://hub.docker.com/r/bocan/php).
 
 # PHP Overview
 
