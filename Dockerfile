@@ -75,5 +75,3 @@ RUN { \
         echo 'upload_max_filesize=${PHP_UPLOAD_LIMIT}'; \
         echo 'post_max_size=${PHP_UPLOAD_LIMIT}'; \
     } > "${PHP_INI_DIR}/conf.d/nextcloud.ini"; \
-
-USER www-data:www-data
