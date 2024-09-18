@@ -1,3 +1,6 @@
+[![Last Push Build](https://github.com/bocan/odin-php/actions/workflows/build.yaml/badge.svg)](https://github.com/bocan/odin-php/actions/workflows/build.yaml)
+[![Daily Refresh Build](https://github.com/bocan/odin-php/actions/workflows/build-nocache.yaml/badge.svg)](https://github.com/bocan/odin-php/actions/workflows/build-nocache.yaml)
+
 # About
 
 This is a Dockerfile and a Github Action used to build a custom docker image of [PHP 8](https://www.php.net/) for my purely Docker powered web stack. It's configured with most everything you'd need to run things like a self-hosted [Wordpress](https://wordpress.org/) or [Nextcloud](https://nextcloud.com/).
