@@ -2,8 +2,8 @@
 #
 FROM php:8-fpm
 
-ENV PHP_MEMORY_LIMIT 512M
-ENV PHP_UPLOAD_LIMIT 512M
+ENV PHP_MEMORY_LIMIT=512M
+ENV PHP_UPLOAD_LIMIT=512M
 
 RUN apt-get update ; \
     apt-get upgrade ; \
