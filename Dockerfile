@@ -11,7 +11,6 @@ RUN apt-get update ; \
         bzip2 \
         git \
         imagemagick \
-        imagemagick-dev \
         gcc \
         g++ \
         make \
@@ -49,7 +48,7 @@ RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem m
     && docker-php-ext-install gd \
     && docker-php-ext-install mbstring
 
-RUN cd /tmp && git clone https://github.com/Imagick/imagick.git  && pecl install /tmp/imagick/package.xml  \
+RUN git clone https://github.com/Imagick/imagick.git  && pecl install ./imagick/package.xml  \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable gd
