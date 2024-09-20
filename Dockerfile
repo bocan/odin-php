@@ -11,6 +11,11 @@ RUN apt-get update ; \
         bzip2 \
         git \
         imagemagick \
+        imagemagick-dev \
+        gcc \
+        g++ \
+        make \
+        autoconf \
         libldap-common \
         libmagickcore-6.q16-6-extra \
         rsync \
@@ -42,7 +47,9 @@ RUN docker-php-ext-install zlib
 RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo_mysql zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
-    && docker-php-ext-install mbstring \
+    && docker-php-ext-install mbstring
+
+RUN cd /tmp && git clone https://github.com/Imagick/imagick.git  && pecl install /tmp/imagick/package.xml  \
     && pecl install imagick \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable gd
