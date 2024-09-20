@@ -43,7 +43,7 @@ RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem m
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mbstring \
-    && pecl install imagick; \
+    && pecl install imagick \
     && docker-php-ext-enable imagick \
     && docker-php-ext-enable gd
 
