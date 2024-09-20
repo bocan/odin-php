@@ -43,7 +43,10 @@ RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem m
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mbstring \
+    && pecl install imagick; \
+    && docker-php-ext-enable imagick \
     && docker-php-ext-enable gd
+
 
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 RUN rm -rf /var/lib/apt/lists/*
