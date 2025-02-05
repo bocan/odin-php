@@ -2,7 +2,7 @@
 #
 FROM php:8.3-fpm
 
-ENV PHP_MEMORY_LIMIT=512M
+ENV PHP_MEMORY_LIMIT=768M
 ENV PHP_UPLOAD_LIMIT=512M
 
 RUN apt-get update ; \
@@ -33,6 +33,7 @@ RUN apt-get update ; \
         libonig-dev \
         libpng-dev \
         libpq-dev \
+        postgresql-server-dev-all \
         libwebp-dev \
         libxml2-dev \
         libzip-dev \
@@ -43,7 +44,7 @@ RUN docker-php-ext-install zlib ; exit 0
 RUN cp /usr/src/php/ext/zlib/config0.m4 /usr/src/php/ext/zlib/config.m4
 RUN docker-php-ext-install zlib
 
-RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo_mysql zip \
+RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo_pgsql pdo_mysql zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
     && docker-php-ext-install mbstring
