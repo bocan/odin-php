@@ -40,10 +40,6 @@ RUN apt-get update ; \
         zlib1g-dev ; \
     usermod -u 1000 www-data && groupmod -g 1000 www-data ;
 
-RUN docker-php-ext-install zlib ; exit 0
-RUN cp /usr/src/php/ext/zlib/config0.m4 /usr/src/php/ext/zlib/config.m4
-RUN docker-php-ext-install zlib
-
 RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo pdo_pgsql pdo_mysql zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
