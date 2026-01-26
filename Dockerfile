@@ -5,8 +5,8 @@ FROM php:8.3-fpm
 ENV PHP_MEMORY_LIMIT=768M
 ENV PHP_UPLOAD_LIMIT=512M
 
-RUN apt-get update ; \
-  apt-get upgrade ; \
+RUN apt-get update && \
+  apt-get upgrade -y && \
   apt-get install -y \
   bzip2 \
   libbz2-dev \
@@ -17,7 +17,6 @@ RUN apt-get update ; \
   make \
   autoconf \
   libldap-common \
-  libmagickcore-6.q16-6-extra \
   rsync \
   libcurl4-openssl-dev \
   libevent-dev \
@@ -38,10 +37,12 @@ RUN apt-get update ; \
   libwebp-dev \
   libxml2-dev \
   libzip-dev \
-  zlib1g-dev ; \
-  usermod -u 1000 www-data && groupmod -g 1000 www-data ;
+  zlib1g-dev && \
+  usermod -u 1000 www-data && groupmod -g 1000 www-data && \
+  dpkg -L libbz2-dev
 
-RUN docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo pdo_pgsql pdo_mysql zip \
+RUN docker-php-ext-configure bz2 --with-bz2=/usr \
+  && docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo pdo_pgsql pdo_mysql zip \
   && docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install mbstring
