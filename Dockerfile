@@ -83,3 +83,5 @@ RUN { \
   echo 'upload_max_filesize=${PHP_UPLOAD_LIMIT}'; \
   echo 'post_max_size=${PHP_UPLOAD_LIMIT}'; \
   } > "${PHP_INI_DIR}/conf.d/nextcloud.ini"; \
+  \
+  sed -i 's/^listen = .*/listen = [::]:9000/' /usr/local/etc/php-fpm.d/www.conf
