@@ -42,7 +42,7 @@ RUN apt-get update && \
   dpkg -L libbz2-dev
 
 RUN docker-php-ext-configure bz2 --with-bz2=/usr \
-  && docker-php-ext-install bz2 bcmath exif gmp intl ldap opcache pcntl sysvsem mysqli pdo pdo_pgsql pdo_mysql zip \
+  && docker-php-ext-install bz2 bcmath exif gmp intl ldap pcntl sysvsem mysqli pdo pdo_pgsql pdo_mysql zip \
   && docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install mbstring
