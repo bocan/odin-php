@@ -52,6 +52,9 @@ RUN git clone https://github.com/Imagick/imagick.git  && pecl install ./imagick/
   && docker-php-ext-enable imagick \
   && docker-php-ext-enable gd
 
+RUN pecl install apcu \
+  && docker-php-ext-enable apcu
+
 
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 RUN rm -rf /var/lib/apt/lists/*
