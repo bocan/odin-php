@@ -1,6 +1,6 @@
 # Add PHP-FPM base image
 #
-FROM php:8.5-fpm
+FROM php:8.6-fpm
 
 ENV PHP_MEMORY_LIMIT=768M
 ENV PHP_UPLOAD_LIMIT=512M
